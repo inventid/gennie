@@ -29,7 +29,7 @@ It can include all kinds of javascript or css, just link to it from `index.html`
 
 ## About the project
 
-at [inventid](https://www.inventid.nl) [@joostverdoorn](https://github.com/joostverdoorn) decided that we needed a new platform.
+At [inventid](https://www.inventid.nl) [@joostverdoorn](https://github.com/joostverdoorn) decided that we needed a new platform.
 We used to depend on Nota, but increasingly we found it triggered errors under higher loads, and it was coupled to strictly with our remaining applications.
 This hurt our deploy speeds, made operations more difficult, and did solve only a few issues.
 
