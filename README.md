@@ -30,11 +30,14 @@ It can include all kinds of javascript or css, just link to it from `index.html`
 ## About the project
 
 At [inventid](https://www.inventid.nl) [@joostverdoorn](https://github.com/joostverdoorn) decided that we needed a new platform.
-We used to depend on Nota, but increasingly we found it triggered errors under higher loads, and it was coupled to strictly with our remaining applications.
+We used to depend on another system, but increasingly we found it triggered errors under higher loads, and it was coupled to strictly with our remaining applications.
+Instead of functioning as a separate service it still had to be deployed on each app server.
 This hurt our deploy speeds, made operations more difficult, and did solve only a few issues.
 
 Gennie on the other hand is designed to run as the simplest service possible.
 By conforming to the simplest possible REST specification, we are able to run html2pdf as a separate service.
+Our documents are stored in a separate repository, which has a special `prebuild` branch.
+This branch also contains all required bower dependencies, which can therefore be pulled.
 
 ### How to suggest improvements?
 
