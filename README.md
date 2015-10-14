@@ -20,7 +20,7 @@ Just fire a POST request to `/render`, where the body of your request containes 
 Gennie will possibly hold you request for a while, depending on how busy she is.
 Once she's ready, she will internally render the document and just return a valid PDF to you.
 
-### Giver her all she needs
+### Give her all she needs
 
 Gennie needs a document template in `document`.
 You can map this in with a Docker container, or simply place your content there.
