@@ -1,0 +1,21 @@
+{
+  "name": "gennie",
+  "version": "1.0.0",
+  "description": "Easy pdf generation microservice using Electron",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "authors": [
+    "Joost Verdoorn <joost@inventid.nl>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^2.10.2",
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "nightmare": "segmentio/nightmare#409c39254a746b68b32c6454ec9ce78517a31c22",
+    "node-uuid": "^1.4.3",
+    "promise-queue": "^2.1.1"
+  }
+}
