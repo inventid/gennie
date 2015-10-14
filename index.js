@@ -28,7 +28,7 @@ app.post('/render', function(req, res) {
   });
 });
 
-app.listen(3000);
+app.listen(config.port);
 
 function render(data) {
   var id = uuid.v4(),
@@ -42,7 +42,6 @@ function render(data) {
   router.get('/data.json', function(req, res) { res.json(data); });
   router.get('/data', function(req, res) { res.type("text/javascript").send("var data = " + JSON.stringify(data)); });
   router.get('/defer', function(req, res) {
-
     deferred = new Promise(function(resolve, reject) {
       router.get('/done', function(req, res) {
         resolve();
@@ -54,7 +53,7 @@ function render(data) {
   });
 
   return Promise
-    .resolve(nightmare.goto('http://localhost:3000/' + id))
+    .resolve(nightmare.goto('http://localhost:' + config.port + '/' + id))
     .then(function() { return deferred; })
     .then(function() { return nightmare.pdf(output, { marginsType: 2 }); })
     .then(function() { return output; });
