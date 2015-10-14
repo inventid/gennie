@@ -4,6 +4,8 @@
 
 [![Code Climate](https://codeclimate.com/github/inventid/gennie/badges/gpa.svg)](https://codeclimate.com/github/inventid/gennie)
 [![Dependency Status](https://gemnasium.com/inventid/gennie.svg)](https://gemnasium.com/inventid/gennie)
+[![Docker Pulls](https://img.shields.io/docker/pulls/inventid/gennie.svg)](https://hub.docker.com/r/inventid/gennie/)
+![MIT license](https://img.shields.io/github/license/inventid/gennie.svg)
 
 ## What is it?
 
