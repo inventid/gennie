@@ -14,6 +14,7 @@
     "bluebird": "^2.10.2",
     "body-parser": "^1.14.1",
     "express": "^4.13.3",
+    "fs": "0.0.2",
     "nightmare": "segmentio/nightmare#409c39254a746b68b32c6454ec9ce78517a31c22",
     "node-uuid": "^1.4.3",
     "promise-queue": "^2.1.1"
