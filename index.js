@@ -12,16 +12,16 @@ var Nightmare  = require('nightmare'),
 // bluebird's promises.
 Queue.configure(Promise);
 
-var nightmare = Nightmare(),
-    maxConcurrent = 1,
-    maxQueue = Infinity,
-    queue = new Queue(maxConcurrent, maxQueue);
+var concurrency = config.concurrency,
+    nightmares = Array(concurrency).fill().map(function() { return Nightmare(); }),
+    queue = new Queue(concurrency, Infinity);
 
 // Create the rendering engine for a new render call
 function render(data) {
     var id = uuid.v4(),
         output = '/tmp/' + id + '.pdf',
         router = express.Router(),
+        nightmare = nightmares.pop(), // Get ourselves a nightmare worker
         deferred;
 
     app.use('/' + id, router);
@@ -62,6 +62,9 @@ function render(data) {
             return nightmare.pdf(output, {marginsType: 2});
         })
         .then(function () {
+            // Make our worker available again
+            nightmares.push(nightmare);
+
             // Return the location of the document
             return output;
         });

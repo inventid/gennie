@@ -1,5 +1,6 @@
 {
   "port": 3000,
+  "concurrency": 4,
   "document_path": "./document",
   "render_timeout": 30000
 }
