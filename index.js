@@ -42,6 +42,10 @@ function render(data) {
                 resolve();
                 res.status(200).end();
             });
+
+            setTimeout(function() {
+              reject(new Error('Deferred rendering has exceeded the timeout'));
+            }, config.render_timeout);
         });
         res.status(200).end();
     });
@@ -102,6 +106,9 @@ app.post('/render', function (req, res) {
                 log('debug', 'Removed local file after serving to the client: ' + output);
             });
         });
+    }).catch(function errored(reason) {
+      log('error', 'Rendering has encountered an error: ' + reason);
+      res.status(500).send(reason);
     });
 });
 
