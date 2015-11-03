@@ -84,6 +84,13 @@ server.get('/healthcheck', function (req, res) {
   log('info', 'Healthcheck was performed');
   res.end('OK');
 });
+app.get('/queues', function (req,res) {
+    log('info', 'Getting queue sizes');
+    res.status(200).json({
+        queued: queue.getQueueLength(),
+        pending: queue.getPendingLength()
+    }).end();
+});
 server.post('/render', function (req, res) {
   log('info', 'Received rendering request');
   queue.add(function started() {
